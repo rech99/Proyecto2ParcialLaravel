@@ -19,8 +19,12 @@ use App\Models\Elementos;
 
 Route ::get('/', 'App\Http\Controllers\ParcialController@index')->name('parcial.index');
 
-Route ::get('crear', 'App\Http\Controllers\ParcialController@create')->name('parcial.create');
+Route ::post('crear', 'App\Http\Controllers\ParcialController@create')->name('parcial.store');
+
+Route::get('agregar', 'App\Http\Controllers\ParcialController@vistaagregar')->name('elementos.agregar');
 
 Route::post('eliminar', 'App\Http\Controllers\ParcialController@delete' )->name('parcial.delete');
 
-Route::post('editar', 'App\Http\Controllers\ParcialController@update' )->name('parcial.update');
+Route::get('/{id}/editar', 'App\Http\Controllers\ParcialController@update' )->name('parcial.update');
+
+Route::put('/{elementos}/editar', 'App\Http\Controllers\ParcialController@editar' )->name('parcial.editar');
