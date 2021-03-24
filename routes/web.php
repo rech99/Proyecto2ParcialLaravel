@@ -23,8 +23,8 @@ Route ::post('crear', 'App\Http\Controllers\ParcialController@create')->name('pa
 
 Route::get('agregar', 'App\Http\Controllers\ParcialController@vistaagregar')->name('elementos.agregar');
 
-Route::post('eliminar', 'App\Http\Controllers\ParcialController@delete' )->name('parcial.delete');
+Route::delete('/{id}', 'App\Http\Controllers\ParcialController@delete' )->name('parcial.destroy');
 
-Route::get('/{id}/editar', 'App\Http\Controllers\ParcialController@update' )->name('parcial.update');
+Route::get('/{id}/editar', 'App\Http\Controllers\ParcialController@edit' )->name('parcial.edit');
 
-Route::put('/{elementos}/editar', 'App\Http\Controllers\ParcialController@editar' )->name('parcial.editar');
+Route::put('/{elementos}/editar', 'App\Http\Controllers\ParcialController@update' )->name('parcial.update');

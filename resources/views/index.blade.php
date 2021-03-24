@@ -26,7 +26,7 @@
                     <td>{{ $elemento->precio }}</td>
                     <td>
                     <form action="{{ url("/{$elemento->id}") }}" method="POST">
-                      <a href="{{ route('parcial.update', ['id' =>$elemento->id]) }}" class="btn btn-info">Editar</a>         
+                      <a href="{{ route('parcial.edit', ['id' =>$elemento->id]) }}" class="btn btn-info">Editar</a>         
                       @csrf
                       @method('DELETE')
                       <button type="submit" class="btn btn-danger">Delete</button>
